@@ -16,25 +16,26 @@ Shoferi deshiron qe ta kryej udhetinmin sa ma shpejt,kurse udhetari qe te mos ke
 3. Kërkesa në pritje: Aprovimi na shoferi.
 
 ## 4. MVP — vetëm tri veçori
-[PLOTËSO] Cilat tri veprime duhet të funksionojnë në versionin e parë?
+Cilat tri veprime duhet të funksionojnë në versionin e parë?
 Kerkesa,Ulset dhe Aprovimi
 
 ## 5. Çfarë e lëmë për më vonë?
-[PLOTËSO] Shëno dy gjëra që nuk na duhen ende.
+Shëno dy gjëra që nuk na duhen ende.
 
 
 
 ## 6. Si e provoj?
-[PLOTËSO] Çfarë duhet të ndodhë kur kërkoj një vend?
+Çfarë duhet të ndodhë kur kërkoj një vend?
 Duhet qe te dal aty nese ka vende te lira dhe te dergoj kerkesen tek Shoferi.
-[PLOTËSO] Çfarë ndodh nëse nuk ka vende të lira?
+ Çfarë ndodh nëse nuk ka vende të lira?
 Atehere nuk mundem te reservoj nje vend te lire.
 ## 7. Prova me kolegun
-[PLOTËSO] Ku u hutua kolegu dhe çfarë ndryshova në skicë?
+Ku u hutua kolegu dhe çfarë ndryshova në skicë?
 Nuk u hutuam sepse ishim te pergadit.
 
-## 8. Ndihma nga AI
-[PLOTËSO] Shëno çfarë ndihme more dhe çfarë kontrollove vetë, ose shkruaj: Nuk përdora AI.
+
+
+## 8. Ndihma nga AI Shëno çfarë ndihme more dhe çfarë kontrollove vetë, ose shkruaj: Nuk përdora AI.
 Nuk kemi perdor AI.
 
 Hiqi shenjat e plotësimit pasi t'i zëvendësosh me përgjigjet e tua.
