@@ -25,7 +25,7 @@ export default async function Detajet({
   return (
     <main>
       <Link href="/">← Kthehu te lista</Link>
-      <h1>{udhetim.nisja} – {udhetim.destinacioni}</h1>
+      <h1>{udhetim.nisja} → {udhetim.destinacioni}</h1>
       <p>Ora: {udhetim.ora}</p>
       <p>Vendtakimi: {udhetim.vendtakimi}</p>
       <p>Vende të lira: {udhetim.vende}</p>

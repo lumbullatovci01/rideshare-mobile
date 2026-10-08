@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { KartaUdhetimi } from "@/components/KartaUdhetimi";
 import { lexoUdhetimet, type Udhetim } from "@/lib/udhetimet";
 
@@ -8,12 +9,13 @@ export default async function Home() {
   let udhetimet: Udhetim[];
   try {
     udhetimet = await lexoUdhetimet();
-  } catch {
+  } catch (e) {
+    console.error(e);
     return (
       <main>
         <h1>RideShare</h1>
         <p role="alert">Nuk u lidhëm me databazën. Provo përsëri.</p>
-        <a className="action" href="/">Provo përsëri</a>
+        <Link className="action" href="/">Provo përsëri</Link>
       </main>
     );
   }
