@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
+    "server-only": "^0.0.1"
+  }
+}
