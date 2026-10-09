@@ -1,4 +1,5 @@
-*.zip
-*.zip
-rideshare-mobile/
-detyra-java-1/
+*
+!.gitignore
+!README.md
+!aplikacioni/
+!aplikacioni/**
