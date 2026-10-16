@@ -9,13 +9,13 @@ export default async function Home() {
   let udhetimet: Udhetim[];
   try {
     udhetimet = await lexoUdhetimet();
-  } catch (e) {
-    console.error(e);
+  } catch {
     return (
       <main>
         <h1>RideShare</h1>
+      <p><Link href="/panel">Hyr / Paneli im</Link></p>
         <p role="alert">Nuk u lidhëm me databazën. Provo përsëri.</p>
-        <Link className="action" href="/">Provo përsëri</Link>
+        <a className="action" href="/">Provo përsëri</a>
       </main>
     );
   }
@@ -23,6 +23,7 @@ export default async function Home() {
   return (
     <main>
       <h1>RideShare · Udhëtimet për AAB</h1>
+      <p><Link href="/panel">Hyr / Paneli im</Link></p>
       <p>Burimi: Neon · të dhëna fiktive për ushtrime</p>
       {udhetimet.length === 0 ? (
         <p>Nuk ka udhëtime për momentin.</p>
