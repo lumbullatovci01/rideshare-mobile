@@ -1,0 +1,10 @@
+*
+!.gitignore
+!README.md
+!aplikacioni/
+!aplikacioni/**
+!MD files/
+!MD files/**
+!java-02.md
+!java-03.md
+!java-04.md
