@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="sq"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RideShare · Lista e ruajtur</title>
+<style>
+body{margin:0;background:#0b101b;color:#edf2ff;font:18px/1.6 system-ui,sans-serif}main{max-width:720px;margin:auto;padding:24px}h1{font-size:clamp(28px,7vw,42px)}button,a{font:inherit;color:inherit}button{padding:12px 18px;border:2px solid #fda4af;border-radius:12px;background:#4b1e32;cursor:pointer}button:disabled{opacity:.7;cursor:not-allowed}a{color:#fda4af}.trip-card{padding:18px;margin:18px 0;border:1px solid #546078;border-radius:14px}.trip-card h2{font-size:22px}#source{padding:16px;border-left:4px solid #fda4af;background:#1c2438}time{overflow-wrap:anywhere}*:focus-visible{outline:3px solid #fda4af;outline-offset:4px}
+</style></head><body><main>
+<p>RideShare AAB · Lexim publik</p><h1>Udhëtimet, edhe pa internet</h1>
+<p id="source" role="status" aria-live="polite">Po lexojmë listën…</p>
+<p>Ruajtur për herë të fundit: <time id="saved">—</time></p>
+<button id="refresh" type="button">Rifresko listën</button>
+<div id="trips"></div>
+<button id="book" disabled>Kërko vend · kërkon lidhje dhe server</button>
+<p>Kjo pamje shërben vetëm për lexim. Vendet dhe orari mund të kenë ndryshuar; asnjë rezervim nuk është konfirmuar.</p>
+<a href="/">Kthehu te aplikacioni</a>
+</main><script>
+const source = document.querySelector("#source"), list = document.querySelector("#trips");
+const refresh = document.querySelector("#refresh");
+async function load() {
+  refresh.disabled = true;
+  source.textContent = "Po kërkojmë listën…";
+  try {
+    const response = await fetch("/api/udhetimet", { cache: "no-store" });
+    const data = await response.json();
+    if (!response.ok || !Array.isArray(data.trips)) throw new Error("no_snapshot");
+    list.replaceChildren();
+    for (const trip of data.trips) {
+      const card = document.createElement("article"); card.className = "trip-card";
+      const title = document.createElement("h2"); title.textContent = trip.nisja + " → " + trip.destinacioni;
+      const details = document.createElement("p");
+      details.textContent = "Ora: " + trip.ora + " · Vende në këtë kopje: " + trip.vende;
+      card.append(title, details); list.append(card);
+    }
+    const saved = response.headers.get("x-rideshare-saved-at");
+    document.querySelector("#saved").textContent = saved ? new Date(saved).toLocaleString("sq-AL") : "Lexuar drejtpërdrejt; kopja ende nuk u ruajt.";
+    source.textContent = response.headers.get("x-rideshare-source") === "cache"
+      ? "Lista e fundit e ruajtur · Mund të jetë vjetruar. Serveri nuk u arrit."
+      : "Lista erdhi nga serveri. Lexo sërish para çdo veprimi.";
+  } catch {
+    source.textContent = list.children.length
+      ? "Lidhja dështoi. Lista në ekran është e mëparshme; nuk ka konfirmim të ri."
+      : "Ende nuk ka listë të ruajtur. Hape aplikacionin me internet dhe provo përsëri.";
+  } finally { refresh.disabled = false; }
+}
+refresh.addEventListener("click", load);
+window.addEventListener("offline", () => { source.textContent = "Lidhja duket e ndërprerë. Lista e shfaqur mund të jetë e vjetër."; });
+window.addEventListener("online", () => { source.textContent = "Rrjeti duket i lidhur. Shtyp Rifresko listën për ta pyetur serverin."; });
+load();
+</script></body></html>
