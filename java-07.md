@@ -12,19 +12,19 @@ ID i udhëtimit në projektin tim: p7-768
 Të dhënat fiktive të rastit: Prizren → AAB, 10:00, 1 vende. Ora për provën e re: 10:05.
 
 ## Parashikimi
- Une parashikova qe skemi me bo shum ne projekt por dul krejt ndryshe.
+Une parashikova qe skemi me bo shum ne projekt por dul krejt ndryshe.
 
 ## Dy probleme
 1. Shoferi e shihte butonin "Kerko vend" te detajet dhe mund ta hapte /udhetimi/p7-768/kerkesa, ku shihte "Simulim: Ne pritje". Hapat: u hyra me GitHub, ne Neon e ndryshova rolin ne shofer (UPDATE profilet SET roli = 'shofer'), hapa /udhetimi/p7-768 dhe pastaj /kerkesa. Pritja ime ishte qe shoferi te mos mund te kerkoje vend.
-2. Paqartesi tjeter. Shenim: nga leximi i lejet.ts, funksioni ndryshoOren pranon vetem ID 1, 2, 3, ndaj nuk mbulon udhetimin tim p7-768. Shkruaje ketu vetem nese e ke provuar vete ne panel; perndryshe shkruaj "nuk e provova".
+2. nuk e provova
 
 ## Korrigjimi
-Skedari: aplikacioni/src/app/udhetimi/[id]/page.tsx (dhe aplikacioni/src/app/udhetimi/[id]/kerkesa/page.tsx)
-Faqja e detajeve lexonte vetem udhetimin nga databaza (gjejUdhetimin), por jo rolin e personit. Shtova profiliIm() nga lejet.ts, qe e lexon rolin nga Neon. Tani, nese roli eshte shofer, ne vend te "Kerko vend" del butoni i çaktivizuar "Vetem lexim", dhe te /kerkesa del "Shoferi nuk mund te kerkoje vend." Strukturen e projektit nuk e ndryshova. [Rishkruaje me fjalet e tua]
+Skedari: aplikacioni/src/app/udhetimi/[id]/page.tsx
+Para korrigjimit, faqja e detajeve e lexonte vetem udhetimin nga databaza, por jo rolin e personit, prandaj edhe shoferi e shihte butonin "Kerko vend". E kam shtuar funksionin profiliIm() nga lejet.ts, qe e merr rolin nga Neon. Tani, nese roli eshte shofer, ne vend te butonit del nje buton i caktivizuar "Vetem lexim". E njejta gje eshte bere te kerkesa/page.tsx, ku shoferi shikon "Shoferi nuk mund te kerkoje vend." Strukturen e projektit nuk e kam ndryshuar.
 
 ## Versionet
-Para:Qe nuk e kam pasur rrugetimin prej Prizreni ne AAB.
-Pas: Qe e kam shti rrugetimin prej Prizreni ne AAB
+Para: https://github.com/lumbullatovci01/rideshare-mobile /commit/<27 commits>
+Pas: https://github.com/lumbullatovci01/rideshare-mobile /commit/<40 commits>
 
 ## Provat që bëra
 ### Prova 1
@@ -40,10 +40,7 @@ Vëzhgimi: Te dyja vendet shfaqen "nuk ka vende te lira".
 ### Prova 3
 Hapat: Si shofer (roli = shofer ne Neon, i hyre me GitHub): hapa /udhetimi/p7-768 dhe /udhetimi/p7-768/kerkesa.
 Pritshmëria: Detajet tregojne "Vetem lexim"; /kerkesa tregon "Shoferi nuk mund te kerkoje vend."
-Vëzhgimi: Shkruaj vetem ate qe pe vete.
+Vëzhgimi: <SHKRUAJ ÇFARË PE REALISHT në secilën faqe>
 
 ## Ndryshimi i ri
-Nuk e kam demonstruar ende ndryshimin e kolegut.
-
-## Ndihma nga AI
-Nuk perdora.
+Nuk e kam
