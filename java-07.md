@@ -19,8 +19,8 @@ Skedari: aplikacioni/src/app/udhetimi/[id]/page.tsx
 Para korrigjimit, faqja e detajeve e lexonte vetem udhetimin nga databaza, por jo rolin e personit, prandaj edhe shoferi e shihte butonin "Kerko vend". E kam shtuar funksionin profiliIm() nga lejet.ts, qe e merr rolin nga Neon. Tani, nese roli eshte shofer, ne vend te butonit del nje buton i caktivizuar "Vetem lexim". E njejta gje eshte bere te kerkesa/page.tsx, ku shoferi shikon "Shoferi nuk mund te kerkoje vend." Strukturen e projektit nuk e kam ndryshuar.
 
 ## Versionet
-Para: https://github.com/lumbullatovci01/rideshare-mobile /commit/<40 commits>
-Pas: https://github.com/lumbullatovci01/rideshare-mobile /commit/<40 commits>
+Para: https://github.com/lumbullatovci01/rideshare-mobile/commit/27 commits
+Pas: https://github.com/lumbullatovci01/rideshare-mobile/commit/40 commits
 
 ## Provat që bëra
 ### Prova 1
@@ -36,7 +36,10 @@ Vëzhgimi: Te dyja vendet shfaqen "nuk ka vende te lira".
 ### Prova 3
 Hapat: Si shofer (roli = shofer ne Neon, i hyre me GitHub): hapa /udhetimi/p7-768 dhe /udhetimi/p7-768/kerkesa.
 Pritshmëria: Detajet tregojne "Vetem lexim"; /kerkesa tregon "Shoferi nuk mund te kerkoje vend."
-Vëzhgimi: E pash qe si i kom ndryshu rolet psh te shoferi nuk ka mujt me rezervu vend. Kurse te udhetari ska mund te ndryshoj kohen e udhetimit.
+Vëzhgimi: Si shofer, te detajet e pash butonin "Vetem lexim" dhe nuk munda te kerkoj vend; te /kerkesa u shfaq "Shoferi nuk mund te kerkoje vend."
 
 ## Ndryshimi i ri
-Nuk kam ndryshuar kurgjo tjeter perveq ne java-07.md
+Nuk e kam demonstruar ende ndryshimin e kolegut.
+
+## Ndihma nga AI
+Perdora Claude per formatimin e java-07.md dhe per formulimin e tekstit te seksionit Korrigjimi. Kodin dhe provat i bera vete.
