@@ -19,7 +19,7 @@ Skedari: aplikacioni/src/app/udhetimi/[id]/page.tsx
 Para korrigjimit, faqja e detajeve e lexonte vetem udhetimin nga databaza, por jo rolin e personit, prandaj edhe shoferi e shihte butonin "Kerko vend". E kam shtuar funksionin profiliIm() nga lejet.ts, qe e merr rolin nga Neon. Tani, nese roli eshte shofer, ne vend te butonit del nje buton i caktivizuar "Vetem lexim". E njejta gje eshte bere te kerkesa/page.tsx, ku shoferi shikon "Shoferi nuk mund te kerkoje vend." Strukturen e projektit nuk e kam ndryshuar.
 
 ## Versionet
-Para: https://github.com/lumbullatovci01/rideshare-mobile/commit/da5b372fed403b1a832039487d2e4bbc60434fb6
+Para: https://github.com/lumbullatovci01/rideshare-mobile/commit/344cdf6a51800ef89257677b4cece1bfcf9c545e
 Pas: https://github.com/lumbullatovci01/rideshare-mobile/commit/8253cf7d584a11de31431bb1014a881e9fdcc589
 
 ## Provat që bëra
