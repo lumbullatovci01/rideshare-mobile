@@ -5,66 +5,102 @@
 - GitHub: lumbullatovci01
 - Kodi: P7-768
 - Skenari i zgjedhur: Rasti 1 - Lista dhe detajet
-- ID i udhëtimit në projektin tim: P7-768
-- Të dhënat fiktive të rastit: Prizren → AAB, 10:00, 1 vende.
-- Ora për provën e re: 10:05.
+- ID i udhetimit ne projektin tim: P7-768
+- Te dhenat fiktive te rastit: Prizren → AAB, 10:00, 1 vende.
+- Ora per proven e re: 10:05.
 
 ## Parashikimi
 
-Unë parashikova që nuk do të bënim shumë ndryshime në projekt, por puna doli krejt ndryshe.
+Une parashikova qe nuk do te kishim shume ndryshime ne projekt, por puna doli ndryshe nga ajo qe prisja. Gjate testimit identifikova probleme me kontrollin e roleve dhe qasjen e perdoruesve ne faqen e kerkeses per vend.
 
 ## Dy probleme
 
-1. Shoferi e shihte butonin "Kërko vend" te detajet dhe mund ta hapte `/udhetimi/p7-768/kerkesa`, ku shihte "Simulim: Në pritje".
+### Problemi 1
 
-   **Hapat:** U kyça me GitHub, në Neon e ndryshova rolin në shofer (`UPDATE profilet SET roli = 'shofer'`), hapa `/udhetimi/p7-768` dhe pastaj `/kerkesa`.
+Shoferi e shihte butonin "Kerko vend" te detajet dhe mund ta hapte faqen `/udhetimi/p7-768/kerkesa`, ku shfaqej mesazhi "Simulim: Ne pritje".
 
-   **Pritshmëria:** Shoferi të mos mund të kërkojë vend.
+**Hapat:**
+1. U kyca me GitHub.
+2. Ne Neon e ndryshova rolin ne shofer me komanden `UPDATE profilet SET roli = 'shofer'`.
+3. Hapa faqen `/udhetimi/p7-768`.
+4. Pastaj hapa faqen `/udhetimi/p7-768/kerkesa`.
 
-2. Nuk e provova problemin e dytë.
+**Pritshmeria:** Shoferi te mos mund te kerkoje vend, sepse kjo mundesi duhet te jete vetem per udhetaret.
+
+### Problemi 2
+
+Nuk e provova nje problem te dyte te vecante gjate ketij testimi.
 
 ## Korrigjimi
 
 **Skedari:** `aplikacioni/src/app/udhetimi/[id]/page.tsx`
 
-Para korrigjimit, faqja e detajeve e lexonte vetëm udhëtimin nga databaza, por jo rolin e personit. Prandaj, edhe shoferi e shihte butonin "Kërko vend".
+Ne faqen e detajeve kam shtuar funksionin `profiliIm()` nga `lejet.ts`, i cili e merr rolin e perdoruesit nga databaza Neon.
 
-E kam shtuar funksionin `profiliIm()` nga `lejet.ts`, i cili e merr rolin nga Neon. Tani, nëse roli është shofer, në vend të butonit shfaqet një buton i çaktivizuar "Vetëm lexim".
+Nese perdoruesi eshte shofer, butoni "Kerko vend" zevendesohet me butonin e caktivizuar "Vetem lexim". Ne kete menyre shoferi nuk mund te vazhdoje me kerkesen per vend.
 
-E njëjta gjë është bërë edhe te `kerkesa/page.tsx`, ku shoferi shikon mesazhin "Shoferi nuk mund të kërkojë vend".
+**Skedari:** `aplikacioni/src/app/udhetimi/[id]/kerkesa/page.tsx`
 
-Strukturën e projektit nuk e kam ndryshuar.
+Ne faqen e kerkeses kam shtuar kontrollin e rolit te perdoruesit. Nese roli eshte shofer, shfaqet mesazhi "Shoferi nuk mund te kerkoje vend". Per udhetaret, faqja vazhdon te funksionoje sipas numrit te vendeve te lira.
+
+**Rezultati:** Te dyja faqet kontrollojne rolin e perdoruesit dhe kufizojne mundesine e shoferit per te kerkuar vend. Struktura e projektit nuk eshte ndryshuar.
 
 ## Versionet
 
-- Para: https://github.com/lumbullatovci01/rideshare-mobile/commit/344cdf6a51800ef89257677b4cece1bfcf9c545e
-- Pas: https://github.com/lumbullatovci01/rideshare-mobile/commit/8253cf7d584a11de31431bb1014a881e9fdcc589
+**Para korrigjimit:**
 
-## Provat që bëra
+https://github.com/lumbullatovci01/rideshare-mobile/commit/344cdf6a51800ef89257677b4cece1bfcf9c545e
+
+**Pas korrigjimit:**
+
+https://github.com/lumbullatovci01/rideshare-mobile/commit/8253cf7d584a11de31431bb1014a881e9fdcc589
+
+## Provat qe bera
 
 ### Prova 1
 
-**Hapat:** Hapa `localhost:3000/udhetimi/999` dhe `localhost:3000/udhetimi/999/kerkesa`.
+**Hapat:**
 
-**Pritshmëria:** Mesazh i qartë që udhëtimi nuk gjendet dhe lidhje për t'u kthyer te lista.
+Hapa adresat `localhost:3000/udhetimi/999` dhe `localhost:3000/udhetimi/999/kerkesa`.
 
-**Vëzhgimi:** Të dyja shfaqin "Udhëtimi nuk u gjet" me butonin "Kthehu te lista".
+**Pritshmeria:**
+
+Te shfaqet nje mesazh i qarte qe udhetimi nuk gjendet dhe nje lidhje per t'u kthyer te lista e udhetimeve.
+
+**Vezhgimi:**
+
+Ne te dyja faqet shfaqet mesazhi "Udhetimi nuk u gjet" me butonin "Kthehu te lista".
 
 ### Prova 2
 
-**Hapat:** Hapa udhëtimin Lipjan - AAB (0 vende), te detajet dhe direkt te `/kerkesa`.
+**Hapat:**
 
-**Pritshmëria:** Asnjë premtim për vend të lirë.
+Hapa udhetimin Lipjan - AAB, i cili kishte 0 vende te lira. Kontrollova faqen e detajeve dhe pastaj faqen `/kerkesa`.
 
-**Vëzhgimi:** Në të dyja vendet shfaqet "Nuk ka vende të lira".
+**Pritshmeria:**
+
+Sistemi te mos premtoje se ka vende te lira kur numri i vendeve eshte zero.
+
+**Vezhgimi:**
+
+Ne te dyja faqet shfaqet mesazhi "Nuk ka vende te lira".
 
 ### Prova 3
 
-**Hapat:** Si shofer (roli = shofer në Neon, i kyçur me GitHub), hapa `/udhetimi/p7-768` dhe `/udhetimi/p7-768/kerkesa`.
+**Hapat:**
 
-**Pritshmëria:** Detajet tregojnë "Vetëm lexim"; `/kerkesa` tregon "Shoferi nuk mund të kërkojë vend".
+1. U kyca me GitHub.
+2. Ne databazen Neon e ndryshova rolin e perdoruesit ne `shofer`.
+3. Hapa faqen `/udhetimi/p7-768`.
+4. Pastaj hapa faqen `/udhetimi/p7-768/kerkesa`.
 
-**Vëzhgimi:** Si shofer, te detajet pashë butonin "Vetëm lexim" dhe nuk munda të kërkoj vend. Te `/kerkesa` u shfaq mesazhi "Shoferi nuk mund të kërkojë vend".
+**Pritshmeria:**
+
+Ne faqen e detajeve te shfaqet butoni "Vetem lexim", ndersa ne faqen e kerkeses te shfaqet mesazhi "Shoferi nuk mund te kerkoje vend".
+
+**Vezhgimi:**
+
+Te detajet u shfaq butoni "Vetem lexim" dhe nuk munda te kerkoj vend. Te faqja e kerkeses u shfaq mesazhi "Shoferi nuk mund te kerkoje vend".
 
 ## Ndryshimi i ri
 
@@ -72,4 +108,4 @@ Nuk e kam demonstruar ende ndryshimin e kolegut.
 
 ## Ndihma nga AI
 
-Përdora Claude për formatimin e `java-07.md` dhe për formulimin e tekstit të seksionit Korrigjimi. Kodin dhe provat i bëra vetë.
+Perdora Claude per formatimin e dokumentit `java-07.md` dhe per formulimin e tekstit ne seksionin Korrigjimi. Kodin e aplikacionit dhe provat i bera vete.
