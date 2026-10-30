@@ -1,9 +1,5 @@
 # RideShare · Java 7
 
-Ruaje si **java-07.md**, pranë README në rrënjën e repository-t tënd. Plotëso me vëzhgimet e tua dhe plotëso çdo vend bosh përpara dorëzimit. Ruaj titujt dhe etiketat. Para/Pas janë dy URL të plota commit-esh nga i njëjti repository, me kodin e plotë prej 40 shenjash.
-
-Pas Commit dhe Push, hap formularin e lëndës për **Java 7** dhe vendos linkun kryesor të repository-t. Rezultati vjen te komenti **Kontrolli automatik i dorëzimit**, nga github-actions[bot], në Issue-n tënd. Lexo 5/5 dhe çdo ✅/❌; nëse korrigjon, bëj Push dhe komento **rikontrollo** te i njëjti Issue. 5/5 është kontroll teknik, jo notë.
-
 ## Rasti im
 GitHub: lumbullatovci01
 Kodi: P7-768
@@ -23,8 +19,8 @@ Skedari: aplikacioni/src/app/udhetimi/[id]/page.tsx
 Para korrigjimit, faqja e detajeve e lexonte vetem udhetimin nga databaza, por jo rolin e personit, prandaj edhe shoferi e shihte butonin "Kerko vend". E kam shtuar funksionin profiliIm() nga lejet.ts, qe e merr rolin nga Neon. Tani, nese roli eshte shofer, ne vend te butonit del nje buton i caktivizuar "Vetem lexim". E njejta gje eshte bere te kerkesa/page.tsx, ku shoferi shikon "Shoferi nuk mund te kerkoje vend." Strukturen e projektit nuk e kam ndryshuar.
 
 ## Versionet
-Para: https://github.com/lumbullatovci01/rideshare-mobile /commit/<27 commits>
-Pas: https://github.com/lumbullatovci01/rideshare-mobile /commit/<30 commits>
+Para: https://github.com/lumbullatovci01/rideshare-mobile /commit/<40 commits>
+Pas: https://github.com/lumbullatovci01/rideshare-mobile /commit/<40 commits>
 
 ## Provat që bëra
 ### Prova 1
