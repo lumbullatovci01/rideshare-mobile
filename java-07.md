@@ -8,7 +8,7 @@ Pas Commit dhe Push, hap formularin e lëndës për **Java 7** dhe vendos linkun
 GitHub: lumbullatovci01
 Kodi: P7-768
 Skenari i zgjedhur (numri dhe titulli, nga Rastet 1–5): Rasti 1 - Lista dhe detajet
-ID i udhëtimit në projektin tim: P7-768
+ID i udhëtimit në projektin tim: p7-768
 Të dhënat fiktive të rastit: Prizren → AAB, 10:00, 1 vende. Ora për provën e re: 10:05.
 
 ## Parashikimi
