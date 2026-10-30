@@ -5,11 +5,11 @@ Ruaje si **java-07.md**, pranë README në rrënjën e repository-t tënd. Plot�
 Pas Commit dhe Push, hap formularin e lëndës për **Java 7** dhe vendos linkun kryesor të repository-t. Rezultati vjen te komenti **Kontrolli automatik i dorëzimit**, nga github-actions[bot], në Issue-n tënd. Lexo 5/5 dhe çdo ✅/❌; nëse korrigjon, bëj Push dhe komento **rikontrollo** te i njëjti Issue. 5/5 është kontroll teknik, jo notë.
 
 ## Rasti im
-   GitHub: lumbullatovci01
-   Kodi: P7-768
-   Skenari i zgjedhur (numri dhe titulli, nga Rastet 1–5): Rasti 1 - Lista dhe detajet
-   ID i udhëtimit në projektin tim: P7-768
-   Të dhënat fiktive të rastit: Prizren → AAB, 10:00, 1 vende. Ora për provën e re: 10:05.
+GitHub: lumbullatovci01
+Kodi: P7-768
+Skenari i zgjedhur (numri dhe titulli, nga Rastet 1–5): Rasti 1 - Lista dhe detajet
+ID i udhëtimit në projektin tim: P7-768
+Të dhënat fiktive të rastit: Prizren → AAB, 10:00, 1 vende. Ora për provën e re: 10:05.
 
 ## Parashikimi
 Une parashikova qe nuk do te kishim shume ndryshime ne projekt, por puna doli ndryshe nga ajo qe prisja. Gjate testimit identifikova probleme me kontrollin e roleve dhe qasjen e perdoruesve ne faqen e kerkeses per vend.
