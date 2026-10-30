@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { gjejUdhetimin } from "@/lib/udhetimet";
+import { profiliIm } from "@/lib/lejet";
 
 export const dynamic = "force-dynamic";
 
@@ -9,8 +10,10 @@ export default async function Kerkesa({
 }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   let udhetim;
+  let profili;
   try {
     udhetim = await gjejUdhetimin(id);
+    profili = await profiliIm();
   } catch {
     return (
       <main>
@@ -25,13 +28,20 @@ export default async function Kerkesa({
   return (
     <main>
       <Link href={`/udhetimi/${id}`}>← Kthehu te detajet</Link>
-      {udhetim.vende > 0 ? (
+      {profili?.roli === "shofer" ? (
+        <>
+          <h1>Shoferi nuk mund të kërkojë vend.</h1>
+          <p>Ky ekran është vetëm për udhëtarët.</p>
+        </>
+      ) : udhetim.vende > 0 ? (
         <>
           <h1>Simulim: Në pritje</h1>
           <p>Kërkesa për {udhetim.nisja} nuk është dërguar te shoferi.</p>
           <p>Ruajtjen dhe konfirmimin real do t’i shtojmë më vonë.</p>
         </>
-      ) : <h1>Nuk ka vende të lira.</h1>}
+      ) : (
+        <h1>Nuk ka vende të lira.</h1>
+      )}
     </main>
   );
 }

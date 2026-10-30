@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { gjejUdhetimin } from "@/lib/udhetimet";
+import { profiliIm } from "@/lib/lejet";
 
 export const dynamic = "force-dynamic";
 
@@ -9,8 +10,10 @@ export default async function Detajet({
 }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   let udhetim;
+  let profili;
   try {
     udhetim = await gjejUdhetimin(id);
+    profili = await profiliIm();
   } catch {
     return (
       <main>
@@ -29,11 +32,16 @@ export default async function Detajet({
       <p>Ora: {udhetim.ora}</p>
       <p>Vendtakimi: {udhetim.vendtakimi}</p>
       <p>Vende të lira: {udhetim.vende}</p>
-      {udhetim.vende > 0 ? (
+      <p>Roli yt: {profili?.roli ?? "vizitor"}</p>
+      {profili?.roli === "shofer" ? (
+        <button className="action" disabled>Vetëm lexim</button>
+      ) : udhetim.vende > 0 ? (
         <Link className="action" href={`/udhetimi/${id}/kerkesa`}>
           Kërko vend
         </Link>
-      ) : <button className="action" disabled>Nuk ka vende të lira</button>}
+      ) : (
+        <button className="action" disabled>Nuk ka vende të lira</button>
+      )}
     </main>
   );
 }

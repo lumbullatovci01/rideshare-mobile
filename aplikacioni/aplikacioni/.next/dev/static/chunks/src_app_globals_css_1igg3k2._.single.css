@@ -1,0 +1,102 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+:root {
+  --background: #fff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --lightningcss-light: ;
+    --lightningcss-dark: initial;
+    color-scheme: dark;
+  }
+}
+
+body {
+  color: #edf2fc;
+  background: #0b1220;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #89ddff;
+}
+
+main {
+  max-width: 720px;
+  margin: auto;
+  padding: 24px;
+}
+
+.trip-list {
+  gap: 16px;
+  display: grid;
+}
+
+.trip-card {
+  border: 1px solid #8090aa;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.action {
+  color: #fff;
+  background: #3548d4;
+  border-radius: 8px;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 12px;
+  padding: 8px 14px;
+  display: inline-flex;
+}
+
+.action:disabled {
+  color: #e4eaf4;
+  cursor: default;
+  background: #39455b;
+}
+
+/*# sourceMappingURL=src_app_globals_css_1igg3k2._.single.css.map*/
