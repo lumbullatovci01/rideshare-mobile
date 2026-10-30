@@ -24,7 +24,7 @@ Para korrigjimit, faqja e detajeve e lexonte vetem udhetimin nga databaza, por j
 
 ## Versionet
 Para: https://github.com/lumbullatovci01/rideshare-mobile /commit/<27 commits>
-Pas: https://github.com/lumbullatovci01/rideshare-mobile /commit/<40 commits>
+Pas: https://github.com/lumbullatovci01/rideshare-mobile /commit/<30 commits>
 
 ## Provat që bëra
 ### Prova 1
