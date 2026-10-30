@@ -40,7 +40,7 @@ Vëzhgimi: Te dyja vendet shfaqen "nuk ka vende te lira".
 ### Prova 3
 Hapat: Si shofer (roli = shofer ne Neon, i hyre me GitHub): hapa /udhetimi/p7-768 dhe /udhetimi/p7-768/kerkesa.
 Pritshmëria: Detajet tregojne "Vetem lexim"; /kerkesa tregon "Shoferi nuk mund te kerkoje vend."
-Vëzhgimi: <SHKRUAJ ÇFARË PE REALISHT në secilën faqe>
+Vëzhgimi: E pash qe si i kom ndryshu rolet psh te shoferi nuk ka mujt me rezervu vend. Kurse te udhetari ska mund te ndryshoj kohen e udhetimit.
 
 ## Ndryshimi i ri
-Nuk e kam
+Nuk kam ndryshuar kurgjo tjeter perveq ne java-07.md
