@@ -7,9 +7,7 @@ Pas Commit dhe Push, hap formularin e lëndës për **Java 7** dhe vendos linkun
 ## Rasti im
 GitHub: lumbullatovci01
 Kodi: P7-768
-Skenari i zgjedhur (numri dhe titulli, nga Rastet 1–5): Rasti 1 - Lista dhe detajet
-ID i udhëtimit në projektin tim: p7-768
-Të dhënat fiktive të rastit: Prizren → AAB, 10:00, 1 vende. Ora për provën e re: 10:05.
+Të dhënat efiktive të rastit: Prizren → AAB, 10:00, 1 vende. Ora për provën e re: 10:05.
 
 ## Parashikimi
 Une parashikova qe nuk do te kishim shume ndryshime ne projekt, por puna doli ndryshe nga ajo qe prisja. Gjate testimit identifikova probleme me kontrollin e roleve dhe qasjen e perdoruesve ne faqen e kerkeses per vend.
