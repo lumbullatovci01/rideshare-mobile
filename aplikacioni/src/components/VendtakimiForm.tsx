@@ -99,6 +99,7 @@ export default function VendtakimiForm() {
       >
         Perdor vendndodhjen time
       </button>
+      
       <p data-testid="location-status" data-state={gjendja}>{mesazhi}</p>
       <p data-testid="location-accuracy">{saktesia}</p>
     </section>
