@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { gjejUdhetimin } from "@/lib/udhetimet";
 import { profiliIm } from "@/lib/lejet";
+import VendtakimiForm from "@/components/VendtakimiForm"; // NEW
 
 export const dynamic = "force-dynamic";
 
@@ -33,6 +34,7 @@ export default async function Detajet({
       <p>Vendtakimi: {udhetim.vendtakimi}</p>
       <p>Vende të lira: {udhetim.vende}</p>
       <p>Roli yt: {profili?.roli ?? "vizitor"}</p>
+      <VendtakimiForm /> {/* NEW */}
       {profili?.roli === "shofer" ? (
         <button className="action" disabled>Vetëm lexim</button>
       ) : udhetim.vende > 0 ? (
