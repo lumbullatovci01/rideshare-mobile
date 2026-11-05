@@ -15,7 +15,7 @@ export default async function Home() {
         <h1>RideShare</h1>
       <p><Link href="/panel">Hyr / Paneli im</Link></p>
         <p role="alert">Nuk u lidhëm me databazën. Provo përsëri.</p>
-        <a className="action" href="/">Provo përsëri</a>
+        <Link className="action" href="/">Provo përsëri</Link>
       </main>
     );
   }
