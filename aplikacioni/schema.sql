@@ -16,4 +16,13 @@ VALUES
   ('3', 'Lipjan', 'AAB', '07:45', 'Qendra e qytetit', 0)
 ON CONFLICT (id) DO NOTHING;
 
+CREATE TABLE IF NOT EXISTS profilet (
+  github_id TEXT PRIMARY KEY,
+  emri TEXT NOT NULL,
+  roli TEXT NOT NULL DEFAULT 'udhetar' CHECK (roli IN ('udhetar', 'shofer'))
+);
+
+ALTER TABLE udhetimet
+  ADD COLUMN IF NOT EXISTS shofer_id TEXT REFERENCES profilet(github_id);
+
 SELECT * FROM udhetimet ORDER BY id;
