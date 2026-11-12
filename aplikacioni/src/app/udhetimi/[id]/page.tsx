@@ -2,7 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { gjejUdhetimin } from "@/lib/udhetimet";
 import { profiliIm } from "@/lib/lejet";
-import VendtakimiForm from "@/components/VendtakimiForm"; // NEW
+import VendtakimiForm from "@/components/VendtakimiForm";
+import PreferimButton from "@/components/PreferimButton";
+import { aEKaPreferuar } from "@/lib/preferimet";
 
 export const dynamic = "force-dynamic";
 
@@ -12,9 +14,11 @@ export default async function Detajet({
   const { id } = await params;
   let udhetim;
   let profili;
+  let preferuar = false;
   try {
     udhetim = await gjejUdhetimin(id);
     profili = await profiliIm();
+    preferuar = await aEKaPreferuar(id);
   } catch {
     return (
       <main>
@@ -34,7 +38,11 @@ export default async function Detajet({
       <p>Vendtakimi: {udhetim.vendtakimi}</p>
       <p>Vende të lira: {udhetim.vende}</p>
       <p>Roli yt: {profili?.roli ?? "vizitor"}</p>
-      <VendtakimiForm /> {/* NEW */}
+      <PreferimButton
+        udhetimId={udhetim.id}
+        fillimishtPreferuar={preferuar}
+      />
+      <VendtakimiForm />
       {profili?.roli === "shofer" ? (
         <button className="action" disabled>Vetëm lexim</button>
       ) : udhetim.vende > 0 ? (
